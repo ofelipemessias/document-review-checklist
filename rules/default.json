@@ -1,0 +1,51 @@
+[
+  {
+    "id": "identificacao",
+    "type": "required_regex",
+    "value": "(?i)(nome|name)\\s*[:.]",
+    "description": "Documento deve ter seção de identificação (campo 'Nome:')",
+    "severity": "error"
+  },
+  {
+    "id": "data",
+    "type": "required_regex",
+    "value": "\\b\\d{2}/\\d{2}/\\d{4}\\b",
+    "description": "Documento deve conter uma data no formato dd/mm/aaaa",
+    "severity": "error"
+  },
+  {
+    "id": "sem_placeholder",
+    "type": "forbidden_phrase",
+    "value": "[NOME]",
+    "description": "Documento não pode conter placeholders não preenchidos",
+    "severity": "error"
+  },
+  {
+    "id": "sem_tbd",
+    "type": "forbidden_phrase",
+    "value": "A DEFINIR",
+    "description": "Documento não pode conter trechos 'A DEFINIR'",
+    "severity": "error"
+  },
+  {
+    "id": "assinatura",
+    "type": "required_phrase",
+    "value": "Assinatura",
+    "description": "Documento deve ter campo de assinatura",
+    "severity": "warning"
+  },
+  {
+    "id": "tamanho_minimo",
+    "type": "min_words",
+    "value": "30",
+    "description": "Documento deve ter pelo menos 30 palavras",
+    "severity": "warning"
+  },
+  {
+    "id": "tamanho_maximo",
+    "type": "max_words",
+    "value": "5000",
+    "description": "Documento deve ter no máximo 5.000 palavras",
+    "severity": "warning"
+  }
+]
